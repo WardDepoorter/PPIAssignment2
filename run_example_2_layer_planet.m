@@ -18,18 +18,18 @@ if new_model == 1
   Model = struct();
   
   Model.number_of_layers = 2;
-  Model.name = 'two_layer_planet';
+  Model.name = 'Moon_Test_1';
   
   % Additional variables
-  Model.GM = 3.9860004415E14;
-  Model.Re = 6378136.30;
+  Model.GM = 4.902800118E12; %check this value; from wikipedia
+  Model.Re = 1737400;
   Model.geoid = 'none';
   Model.nmax = 179;     
   Model.correct_depth = 0;
   
   % Top layer
-  Model.l1.bound = gmt2matrix(load([HOME '/Data/crust1.bd1.gmt'])).*1e3;  % meters with respect to reference sphere
-  Model.l1.dens  = 2650;
+  Model.l1.bound = img2mx('Topography/LDEM_4.IMG',4);  % meters with respect to reference sphere
+  Model.l1.dens  = 2762;
   
   % Second layer
   Model.l2.bound = -50000+Model.l1.bound;     % meters with respect to reference sphere
@@ -45,7 +45,7 @@ if new_model == 1
 else
   % Load previous saved model
 
-  model_name = 'two_layer_planet';
+  model_name = 'Model';
   load([HOME '/Data/' Model.name '.mat']);
 end
 
