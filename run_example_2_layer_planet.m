@@ -32,7 +32,7 @@ if new_model == 1
   Model.l1.dens  = 2550;
   
   % Second layer
-  Model.l2.bound = -50000+Model.l1.bound;     % meters with respect to reference sphere
+  Model.l2.bound = -50000+zeros(size(Model.l1.bound));     % meters with respect to reference sphere
   Model.l2.dens  = 3300;	   % Density in kg/m3
   
   % Bottom bound
