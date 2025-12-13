@@ -6,7 +6,7 @@ Mx = img2mx(filename, px);
 figure;
 imagesc([-180 180], -[-90 90], Mx);
 set(gca, 'YDir', 'normal');  % so latitude increases upward
-colormap(); % Using a better colormap for topography visualization
+demcmap(Mx); % Using a better colormap for topography visualization
 colorbar();
 
 title('Lunar topography in km from reference speriod');
