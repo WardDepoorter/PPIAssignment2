@@ -5,7 +5,7 @@ fclose(fid);
 
 img = img';
 height = double(img) * 0.5;   % scaling factor(see https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/DATA/LOLA_GDR/CYLINDRICAL/IMG/LDEM_4.LBL)
-TopoMx = height/1000;
+TopoMx = height;
 
 end
 

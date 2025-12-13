@@ -29,11 +29,11 @@ if new_model == 1
   
   % Top layer
   Model.l1.bound = img2mx('Topography/LDEM_4.IMG',4);  % meters with respect to reference sphere
-  Model.l1.dens  = 2762;
+  Model.l1.dens  = 2550;
   
   % Second layer
   Model.l2.bound = -50000+Model.l1.bound;     % meters with respect to reference sphere
-  Model.l2.dens  = 3400;	   % Density in kg/m3
+  Model.l2.dens  = 3300;	   % Density in kg/m3
   
   % Bottom bound
   Model.l3.bound = -100000;    % meters with respect to reference sphere
@@ -50,7 +50,7 @@ else
 end
 
 %%%%%%%%%%%%%%%%%%% Computation area %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%% Part that can be modified %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Part that cant be modified %%%%%%%%%%%%%%%%%%%%%%%
 
 latLim =    [-89.5 89.5 1];  % [deg] min latitude, max latitude, resolution latitude (preferable similar to latitude)
 lonLim =    [-180 180 1];% [deg] min longitude, max longitude, resolution longitude (preferable similar to latitude)

@@ -1,6 +1,4 @@
 % plot results
-clear;
-close all;
 clc;
 
 %% tutorial data
@@ -13,7 +11,8 @@ lats = data.grd.lat(:,1);
 
 figure;
 subplot(2,2,1)
-imagesc(lon,lats,((data.pot)));c=colorbar; 
+imagesc(lon,lats,((data.pot)));
+c=colorbar; 
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -25,7 +24,8 @@ ylabel(c,'m*m/s/s')
 set(gca,'YDir','normal')
 
 subplot(2,2,2)
-imagesc(lon,lats,((data.vec.Z)).*1e5);c=colorbar; 
+imagesc(lon,lats,((data.vec.Z)).*1e5);
+c=colorbar; 
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -37,7 +37,8 @@ ylabel(c,'mGal')
 set(gca,'YDir','normal')
 
 subplot(2,2,3)
-imagesc(lon,lats,((data.vec.X)).*1e5);c=colorbar; 
+imagesc(lon,lats,((data.vec.X)).*1e5);
+c=colorbar; 
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -49,7 +50,8 @@ ylabel(c,'mGal')
 set(gca,'YDir','normal')
 
 subplot(2,2,4)
-imagesc(lon,lats,((data.vec.Y)).*1e5);c=colorbar; 
+imagesc(lon,lats,((data.vec.Y)).*1e5);
+c=colorbar; 
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -64,7 +66,8 @@ set(gca,'YDir','normal')
 
 figure;
 subplot(3,3,1)
-imagesc(lon,lats,((data.ten.Tzz).*1e9));c=colorbar;
+imagesc(lon,lats,((data.ten.Tzz).*1e9));
+c=colorbar;
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -76,7 +79,8 @@ ylabel(c,'Eotvos')
 set(gca,'YDir','normal')
 
 subplot(3,3,2)
-imagesc(lon,lats,((data.ten.Txz).*1e9));c=colorbar;
+imagesc(lon,lats,((data.ten.Txz).*1e9));
+c=colorbar;
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -88,7 +92,8 @@ ylabel(c,'Eotvos')
 set(gca,'YDir','normal')
 
 subplot(3,3,3)
-imagesc(lon,lats,((data.ten.Tyz).*1e9));c=colorbar; 
+imagesc(lon,lats,((data.ten.Tyz).*1e9));
+c=colorbar; 
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -100,7 +105,8 @@ ylabel(c,'Eotvos')
 set(gca,'YDir','normal')
 
 subplot(3,3,5)
-imagesc(lon,lats,((data.ten.Txx).*1e9));c=colorbar; 
+imagesc(lon,lats,((data.ten.Txx).*1e9));
+c=colorbar; 
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -112,7 +118,8 @@ ylabel(c,'Eotvos')
 set(gca,'YDir','normal')
 
 subplot(3,3,6)
-imagesc(lon,lats,((data.ten.Txy).*1e9));c=colorbar;
+imagesc(lon,lats,((data.ten.Txy).*1e9));
+c=colorbar;
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
@@ -124,7 +131,8 @@ ylabel(c,'Eotvos')
 set(gca,'YDir','normal')
 
 subplot(3,3,9)
-imagesc(lon,lats,((data.ten.Tyy).*1e9));c=colorbar; 
+imagesc(lon,lats,((data.ten.Tyy).*1e9));
+c=colorbar; 
 hold on
 xlim([min(lon) max(lon)])
 ylim([min(lats) max(lats)])
