@@ -3,7 +3,7 @@ clc;
 
 %% tutorial data
 %%% insert output data file from Results here!!!%%%
-load('Results/data_Moon_Test_1_0_179.mat')
+load('Results/data_Moon_Test_2_0_179.mat')
 
 %% plot different maps of the data
 lon = data.grd.lon(1,:);
@@ -24,7 +24,7 @@ ylabel(c,'m*m/s/s')
 set(gca,'YDir','normal')
 
 subplot(2,2,2)
-imagesc(lon,lats,((data.vec.R)).*1e5);
+imagesc(lon,lats,((data.vec.Z)).*1e5);
 c=colorbar; 
 hold on
 xlim([min(lon) max(lon)])
@@ -32,7 +32,7 @@ ylim([min(lats) max(lats)])
 hold off
 xlabel('Longitude [^o]')
 ylabel('Latitude [^o]')
-title(['R-component of gravity vector'])
+title(['Z-component of gravity vector'])
 ylabel(c,'mGal') 
 set(gca,'YDir','normal')
 

@@ -36,28 +36,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %this function synthesizes the SH from Grail to plot and compare.
 
-% clear;
-% close all;
-% clc;
-% 
-% mx = txt2mx('GRAIL/Grail_sh.txt');
-% mx = mx(:, 1:end-2); % Remove the last two columns containing uncertainties
-% V_Model = mx;
-% 
-% latLim =    [-89.5 89.5 0.25];  % [deg] min latitude, max latitude, resolution latitude (preferable similar to latitude)
-% lonLim =    [-180 180 0.25];% [deg] min longitude, max longitude, resolution longitude (preferable similar to latitude)
-% height =    0.0; % height of computation above spheroid
-% SHbounds =  [0 330]; % Truncation settings: lower limit, upper limit SH-coefficients used
-% 
-% Model = struct();
-% 
-%   Model.number_of_layers = 2;
-%   Model.name = 'Graildata';
-% 
-%   % Additional variables
-%   Model.GM = 4.9028e+12;
-%   Model.Re = 1738*1000;
-%   Model.nmax = 330;
-% 
-% [data] = model_SH_synthesis(lonLim,latLim,height,SHbounds,V_Model,Model);
-save('data_Grail_0_330_0.25','data','Model')
+clear;
+close all;
+clc;
+
+mx = txt2mx('GRAIL/Grail_sh.txt');
+mx = mx(:, 1:end-2); % Remove the last two columns containing uncertainties
+V_Model = mx;
+
+latLim =    [-89.5 89.5 0.25];  % [deg] min latitude, max latitude, resolution latitude (preferable similar to latitude)
+lonLim =    [-180 180 0.25];% [deg] min longitude, max longitude, resolution longitude (preferable similar to latitude)
+height =    0.0; % height of computation above spheroid
+SHbounds =  [0 330]; % Truncation settings: lower limit, upper limit SH-coefficients used
+
+Model = struct();
+
+  Model.number_of_layers = 2;
+  Model.name = 'Graildata';
+
+  % Additional variables
+  Model.GM = 4.9028E12;
+  Model.Re = 1738*1000;
+  Model.nmax = 330;
+
+[data] = model_SH_synthesis(lonLim,latLim,height,SHbounds,V_Model,Model);
+
+save(['Results/data_' Model.name '_' num2str(SHbounds(1)) '_' num2str(SHbounds(2)) '.mat'],'data')
