@@ -3,7 +3,7 @@ clc;
 
 %% tutorial data
 %%% insert output data file from Results here!!!%%%
-load('Results/data_Moon_Test_2_0_179.mat')
+load(['Results/data_Moon_Test_2_0_179.mat'])
 
 %% plot different maps of the data
 lon = data.grd.lon(1,:);
